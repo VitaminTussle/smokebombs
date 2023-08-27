@@ -25,11 +25,31 @@ texture = ExtResource("2_p2s33")
 
 [node name="World" type="Node2D" parent="."]
 
-[node name="Floor" type="Sprite2D" parent="World"]
+[node name="Floor" type="Node" parent="World"]
+
+[node name="Block1" type="Sprite2D" parent="World/Floor"]
 position = Vector2(1, 130)
 texture = ExtResource("2_p2s33")
 
-[node name="Static" type="StaticBody2D" parent="World/Floor"]
+[node name="Static" type="StaticBody2D" parent="World/Floor/Block1"]
 
-[node name="Hitbox" type="CollisionShape2D" parent="World/Floor/Static"]
+[node name="Hitbox" type="CollisionShape2D" parent="World/Floor/Block1/Static"]
+shape = SubResource("RectangleShape2D_q2t7t")
+
+[node name="Block2" type="Sprite2D" parent="World/Floor"]
+position = Vector2(130, 130)
+texture = ExtResource("2_p2s33")
+
+[node name="Static" type="StaticBody2D" parent="World/Floor/Block2"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="World/Floor/Block2/Static"]
+shape = SubResource("RectangleShape2D_q2t7t")
+
+[node name="Block3" type="Sprite2D" parent="World/Floor"]
+position = Vector2(257, 0)
+texture = ExtResource("2_p2s33")
+
+[node name="Static" type="StaticBody2D" parent="World/Floor/Block3"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="World/Floor/Block3/Static"]
 shape = SubResource("RectangleShape2D_q2t7t")
